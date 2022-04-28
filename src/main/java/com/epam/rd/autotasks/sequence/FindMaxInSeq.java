@@ -3,10 +3,22 @@ import java.util.Scanner;
 
 public class FindMaxInSeq {
     public static int max() {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        String[] sNumbers = input.split(" ");
+        int[] numbers = new int[sNumbers.length + 1];
 
-        // Put your code here
+        for (int i = 0; i < sNumbers.length; i++) {
+            numbers[i] = Integer.parseInt(sNumbers[i]);
+        }
+        int maxVal = numbers[0];
+        for (int i = 0; i < sNumbers.length; i++) {
+            if (maxVal < numbers[i] && numbers[i] != 0) {
+                maxVal = numbers[i];
+            }
+        }
 
-        return 0;
+        return maxVal;
     }
 
     public static void main(String[] args) {
